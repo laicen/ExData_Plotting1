@@ -2,6 +2,6 @@ epc <- subset(read.table("filepath", header=TRUE, sep=";"), Date==01/02/2007|Dat
 epc$Date_Time <- paste(epc$Date, epc$Time, sep=" ")
 epc$Date_Time <- strptime(epc$Date_Time, format="%d/%m/%Y %H:%M:%S")
 png(file="plot2.png")
-plot(epc$Day, epc$Global_active_power, ylab="Global Active Power (kilowatts)", xlab="", type="n")
-lines(epc$Day, epc$Global_active_power)
+plot(epc$Date_Time, epc$Global_active_power, ylab="Global Active Power (kilowatts)", xlab="", type="n")
+lines(epc$Date_Time, epc$Global_active_power)
 dev.off()
