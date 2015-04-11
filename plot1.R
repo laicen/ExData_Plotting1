@@ -1,0 +1,6 @@
+epc <- subset(read.table("filepath", header=TRUE, sep=";"), Date==01/02/2007|Date==02/02/2007)
+epc$Date_Time <- paste(epc$Date, epc$Time, sep=" ")
+epc$Date_Time <- strptime(epc$Date_Time, format="%d/%m/%Y %H:%M:%S")
+png(file="plot1.png")
+hist(epc$Global_active_power, main="Global Active Power", xlab="Global Active Power (kilowatts)", col="red")
+dev.off()
