@@ -1,10 +1,10 @@
-
-
-
+epc <- subset(read.table("filepath", header=TRUE, sep=";"), Date==01/02/2007|Date==02/02/2007)
+epc$Date_Time <- paste(epc$Date, epc$Time, sep=" ")
+epc$Date_Time <- strptime(epc$Date_Time, format="%d/%m/%Y %H:%M:%S")
 png(file="plot3.png")
-plot(epc$Day, epc$Sub_metering_1, ylab="Energy sub metering", xlab="", type="n")
-lines(epc$Day, epc$Sub_metering_1)
-lines(epc$Day, epc$Sub_metering_2, col="red")
-lines(epc$Day, epc$Sub_metering_3, col="blue")
+plot(epc$Date_Time, epc$Sub_metering_1, ylab="Energy sub metering", xlab="", type="n")
+lines(epc$Date_Time, epc$Sub_metering_1)
+lines(epc$Date_Time, epc$Sub_metering_2, col="red")
+lines(epc$Date_Time, epc$Sub_metering_3, col="blue")
 legend("topright", pch="__________", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 dev.off()
