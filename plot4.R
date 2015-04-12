@@ -11,7 +11,7 @@ plot(epc$Date_Time, epc$Sub_metering_1, ylab="Energy sub metering", xlab="", typ
 lines(epc$Date_Time, epc$Sub_metering_1)
 lines(epc$Date_Time, epc$Sub_metering_2, col="red")
 lines(epc$Date_Time, epc$Sub_metering_3, col="blue")
-legend("topright", lty=1, col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+legend("topright", lty=1, bty="n", col=c("black","red","blue"), legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 plot(epc$Date_Time, epc$Global_reactive_power, ylab="Global_reactive_power", xlab="datetime", type="n")
 lines(epc$Date_Time, epc$Global_reactive_power)
 dev.off()
