@@ -1,4 +1,4 @@
-epc <- subset(read.table("filepath", header=TRUE, sep=";"), Date==01/02/2007|Date==02/02/2007)
+epc <- subset(read.table("filepath", header=TRUE, sep=";", na.strings="?"), Date==01/02/2007|Date==02/02/2007)
 epc$Date_Time <- paste(epc$Date, epc$Time, sep=" ")
 epc$Date_Time <- strptime(epc$Date_Time, format="%d/%m/%Y %H:%M:%S")
 png(file="plot3.png")
