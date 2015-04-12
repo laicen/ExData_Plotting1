@@ -1,4 +1,4 @@
-epc <- subset(read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?"), Date==1/2/2007|Date==2/2/2007)
+epc <- subset(read.table("household_power_consumption.txt", header=TRUE, sep=";", na.strings="?"), epc$Date==1/2/2007|epc$Date==2/2/2007)
 epc$Date_Time <- paste(epc$Date, epc$Time, sep=" ")
 epc$Date_Time <- strptime(epc$Date_Time, format="%d/%m/%Y %H:%M:%S")
 png(file="plot4.png")
